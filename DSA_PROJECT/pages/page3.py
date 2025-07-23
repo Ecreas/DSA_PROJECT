@@ -2,6 +2,14 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 
+if "input_data" in st.session_state:
+    data = st.session_state["input_data"]
+else:
+    st.warning("No input data found. Please enter data on the main page first.")
+    st.stop()
+
+
+
 st.subheader("Merge Sort Code")
 st.code(
 """
