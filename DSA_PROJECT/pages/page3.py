@@ -2,6 +2,12 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 
+if "input_data" in st.session_state:
+    data = st.session_state["input_data"]
+else:
+    st.warning("No input data found. Please enter data on the main page first.")
+    st.stop()
+
 
 st.subheader("Merge Sort Code")
 st.code(
@@ -87,11 +93,7 @@ def plot_mergesort_tree(arr, x=1, y=1, dx=1, dy=1, ax=None, depth=0, max_depth=1
         plot_mergesort_tree(left, x - dx, y - dy, dx / 2, dy, ax, depth + 1, max_depth)
         plot_mergesort_tree(right, x + dx, y - dy, dx / 2, dy, ax, depth + 1, max_depth)
 
-if "input_data" in st.session_state:
-    data = st.session_state["input_data"]
-else:
-    st.warning("No input data found. Please enter data on the main page first.")
-    st.stop()
+
 
 st.subheader("Input Data")
 st.write(data)
