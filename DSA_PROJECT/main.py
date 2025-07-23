@@ -82,7 +82,7 @@ with col2:
     arr = copy.deepcopy(data)
     start = time.perf_counter()
     sorted_arr, steps = merge_sort(arr)
-    elapsed = (time.perf_counter() - start) * 1000  # ms
+    elapsed = (time.perf_counter() - start) * 1000  
     st.write("Sorted:", sorted_arr)
     st.write("Steps:", steps)
     st.write(f"Time: {elapsed:.3f} ms")
